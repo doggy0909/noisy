@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>백색소음 생성기</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎧 백색소음 생성기</h1>
+
+  <div>
+    <p>☔ 비 오는 소리</p>
+    <button onclick="togglePlay('rain')">재생/정지</button>
+  </div>
+
+  <div>
+    <p>🔥 모닥불 소리</p>
+    <button onclick="togglePlay('fire')">재생/정지</button>
+  </div>
+
+  <div>
+    <p>☕ 카페 소리</p>
+    <button onclick="togglePlay('cafe')">재생/정지</button>
+  </div>
+
+  <audio id="rain" src="sounds/rain.mp3" loop></audio>
+  <audio id="fire" src="sounds/fire.mp3" loop></audio>
+  <audio id="cafe" src="sounds/cafe.mp3" loop></audio>
+
+  <script>
+    function togglePlay(id) {
+      const audio = document.getElementById(id);
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+  </script>
+</body>
+</html>
